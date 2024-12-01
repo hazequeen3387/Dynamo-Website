@@ -11,18 +11,33 @@
       theme: {
         extend: {
           animation: {
-            fadeIn: "fadeIn 1.5s ease-in-out",
+            fadeIn: "fadeIn 0.8s ease-in-out forwards",
+            fadeInUp: "fadeInUp 0.8s ease-in-out forwards",
           },
           keyframes: {
             fadeIn: {
               from: { opacity: 0 },
               to: { opacity: 1 },
             },
+            fadeInUp: {
+              from: { opacity: 0, transform: "translateY(20px)" },
+              to: { opacity: 1, transform: "translateY(0)" },
+            },
           },
         },
       },
     };
   </script>
+  <style>
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    [data-animate].visible {
+      animation: fadeInUp 0.8s ease-in-out forwards;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
@@ -41,7 +56,7 @@
   </nav>
 
   <main class="flex flex-col items-center justify-center py-20 px-4 text-center">
-    <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl animate-fadeIn">
+    <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl" data-animate>
       <div class="text-container">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Get the best Discord experience</h1>
         <p class="text-lg text-gray-300 mb-8">Enhance and manage your Discord server, from close-knit groups to vibrant large communities - all with Dynamo bot.</p>
@@ -50,16 +65,35 @@
           <a href="https://top.gg/bot/1183600303476572251/vote" class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-md text-sm font-bold transition-transform transform hover:scale-105">Vote for Dynamo Bot</a>
         </div>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <img src="./images/dc1.png" alt="Screenshot 1" class="rounded-lg shadow-lg w-80 h-auto transform hover:scale-105 transition duration-300">
-        <img src="./images/dc2.png" alt="Screenshot 2" class="rounded-lg shadow-lg w-80 h-auto transform hover:scale-105 transition duration-300">
+      <div class="flex flex-wrap justify-center gap-4" data-animate>
+        <img src="./images/dc1.png" alt="Screenshot 1" class="rounded-lg shadow-lg w-80 h-auto object-cover transform hover:scale-105 transition duration-300" style="clip-path: inset(5px 5px 0 5px);">
+        <img src="./images/dc2.png" alt="Screenshot 2" class="rounded-lg shadow-lg w-80 h-auto object-cover transform hover:scale-105 transition duration-300" style="clip-path: inset(5px 5px 0 5px);">
       </div>
     </div>
   </main>
 
-  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm animate-fadeIn">
+  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm" data-animate>
     &copy; 2024 Dynamo Bot. All rights reserved.
   </footer>
+
+  <script>
+    const elements = document.querySelectorAll('[data-animate]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  </script>
 </body>
 
 </html>
