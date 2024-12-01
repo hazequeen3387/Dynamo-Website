@@ -6,41 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamo Bot</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: "fadeIn 1.5s ease-in-out",
+          },
+          keyframes: {
+            fadeIn: {
+              from: { opacity: 0 },
+              to: { opacity: 1 },
+            },
+          },
+        },
+      },
+    };
+  </script>
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
-  <nav class="flex items-center justify-between p-4 bg-gray-800 shadow-md sticky top-0 z-10">
+  <nav class="flex items-center justify-between p-4 bg-gray-800 shadow-md sticky top-0 z-10 animate-fadeIn">
     <div class="flex items-center gap-4">
       <img src="./logo.png" alt="Logo" class="h-12 w-12 rounded-lg">
       <ul class="hidden md:flex gap-8 text-sm font-medium">
-        <li><a href="#" class="hover:text-blue-400">Features</a></li>
-        <li><a href="#" class="hover:text-blue-400">Get Started</a></li>
-        <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400">Vote</a></li>
-        <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400">Discord</a></li>
-        <li><a href="#" class="hover:text-blue-400">Dashboard</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Features</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a></li>
+        <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a></li>
+        <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a></li>
       </ul>
     </div>
-    <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold">Invite</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold transition duration-300">Invite</a>
   </nav>
 
   <main class="flex flex-col items-center justify-center py-20 px-4 text-center">
-    <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl">
+    <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl animate-fadeIn">
       <div class="text-container">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Get the best Discord experience</h1>
         <p class="text-lg text-gray-300 mb-8">Enhance and manage your Discord server, from close-knit groups to vibrant large communities - all with Dynamo bot.</p>
         <div class="flex gap-4 justify-center">
-          <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-sm font-bold">Invite to Discord</a>
-          <a href="https://top.gg/bot/1183600303476572251/vote" class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-md text-sm font-bold">Vote for Dynamo Bot</a>
+          <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-sm font-bold transition-transform transform hover:scale-105">Invite to Discord</a>
+          <a href="https://top.gg/bot/1183600303476572251/vote" class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-md text-sm font-bold transition-transform transform hover:scale-105">Vote for Dynamo Bot</a>
         </div>
       </div>
       <div class="flex flex-wrap justify-center gap-4">
-        <img src="./images/dc1.png" alt="Screenshot 1" class="rounded-lg shadow-lg w-80 h-auto">
-        <img src="./images/dc2.png" alt="Screenshot 2" class="rounded-lg shadow-lg w-80 h-auto">
+        <img src="./images/dc1.png" alt="Screenshot 1" class="rounded-lg shadow-lg w-80 h-auto transform hover:scale-105 transition duration-300">
+        <img src="./images/dc2.png" alt="Screenshot 2" class="rounded-lg shadow-lg w-80 h-auto transform hover:scale-105 transition duration-300">
       </div>
     </div>
   </main>
 
-  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm">
+  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm animate-fadeIn">
     &copy; 2024 Dynamo Bot. All rights reserved.
   </footer>
 </body>
