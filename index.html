@@ -17,9 +17,8 @@
     }
 
     img {
-      border-radius: 1rem;
+      border-radius: 0.75rem;
       object-fit: cover;
-      clip-path: inset(10px 10px 0 10px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -28,15 +27,16 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
 
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    [data-animate].visible {
-      opacity: 1;
-      transform: translateY(0);
+    .logo img {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 0.5rem;
     }
   </style>
 </head>
@@ -45,8 +45,8 @@
   <!-- Navigation Bar -->
   <header class="bg-gray-800 shadow-md sticky top-0 z-50">
     <nav class="container mx-auto flex items-center justify-between p-4">
-      <a href="#" class="flex items-center gap-2">
-        <img src="./logo.png" alt="Dynamo Bot Logo" class="h-10 w-10 rounded-lg">
+      <a href="#" class="logo">
+        <img src="./logo.png" alt="Dynamo Bot Logo">
         <span class="text-lg font-bold">Dynamo Bot</span>
       </a>
       <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -62,7 +62,7 @@
 
   <!-- Hero Section -->
   <section class="bg-gray-900 py-20">
-    <div class="container mx-auto text-center" data-animate>
+    <div class="container mx-auto text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Upgrade Your Discord Experience</h1>
       <p class="text-gray-300 text-lg mb-8">Simplify server management and supercharge your community with the Dynamo Bot.</p>
       <div class="flex justify-center gap-4">
@@ -75,10 +75,10 @@
   <!-- Screenshots Section -->
   <section class="bg-gray-800 py-20">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6" data-animate>Dynamo Bot in Action</h2>
+      <h2 class="text-3xl font-bold mb-6">Dynamo Bot in Action</h2>
       <div class="flex flex-wrap justify-center gap-6">
-        <img src="./images/dc1.png" alt="Screenshot 1" class="w-80 h-auto shadow-lg" data-animate>
-        <img src="./images/dc2.png" alt="Screenshot 2" class="w-80 h-auto shadow-lg" data-animate>
+        <img src="./images/dc1.png" alt="Screenshot 1" class="w-80 h-auto shadow-lg">
+        <img src="./images/dc2.png" alt="Screenshot 2" class="w-80 h-auto shadow-lg">
       </div>
     </div>
   </section>
@@ -86,18 +86,18 @@
   <!-- Features Section -->
   <section id="features" class="py-20 bg-gray-800">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6" data-animate>Key Features</h2>
-      <p class="text-gray-300 text-lg mb-8" data-animate>Discover what makes Dynamo Bot the perfect companion for your server.</p>
+      <h2 class="text-3xl font-bold mb-6">Key Features</h2>
+      <p class="text-gray-300 text-lg mb-8">Discover what makes Dynamo Bot the perfect companion for your server.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-700 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-700 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Automation</h3>
           <p class="text-gray-300">Streamline server moderation and management with powerful automation tools.</p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-700 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Custom Commands</h3>
           <p class="text-gray-300">Create unique commands tailored to your server's needs.</p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-700 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Community Engagement</h3>
           <p class="text-gray-300">Boost interaction with fun and engaging features for your members.</p>
         </div>
@@ -108,18 +108,18 @@
   <!-- Get Started Section -->
   <section id="get-started" class="py-20 bg-gray-900">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6" data-animate>Get Started</h2>
-      <p class="text-gray-300 text-lg mb-8" data-animate>Setting up Dynamo Bot is quick and easy. Follow these steps to get started.</p>
+      <h2 class="text-3xl font-bold mb-6">Get Started</h2>
+      <p class="text-gray-300 text-lg mb-8">Setting up Dynamo Bot is quick and easy. Follow these steps to get started.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-800 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Step 1</h3>
           <p class="text-gray-300">Invite the bot to your server using the link above.</p>
         </div>
-        <div class="bg-gray-800 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-800 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Step 2</h3>
           <p class="text-gray-300">Set up your preferences and configure commands.</p>
         </div>
-        <div class="bg-gray-800 p-6 rounded-md shadow-lg" data-animate>
+        <div class="bg-gray-800 p-6 rounded-md shadow-lg">
           <h3 class="text-xl font-bold mb-2">Step 3</h3>
           <p class="text-gray-300">Enjoy a seamless Discord experience!</p>
         </div>
@@ -133,18 +133,6 @@
       &copy; 2024 Dynamo Bot. All rights reserved.
     </div>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
-  </script>
 </body>
 
 </html>
