@@ -32,6 +32,18 @@
     [data-animate].visible {
       animation: fadeInUp 0.8s ease-in-out forwards;
     }
+
+    .menu-toggle {
+      @apply md:hidden cursor-pointer text-white;
+    }
+
+    .mobile-menu {
+      @apply hidden flex flex-col gap-4 absolute top-16 left-4 bg-gray-800 shadow-lg rounded-md p-4;
+    }
+
+    .mobile-menu.show {
+      @apply block;
+    }
   </style>
 </head>
 
@@ -39,22 +51,27 @@
   <nav class="flex items-center justify-between p-4 bg-gray-800 shadow-md sticky top-0 z-10">
     <div class="flex items-center gap-4">
       <img src="./logo.png" alt="Logo" class="h-12 w-12 rounded-lg">
-    </div>
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      <div class="menu-toggle md:hidden" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
-      </button>
+      </div>
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Features</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a></li>
+        <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a></li>
+        <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a></li>
+      </ul>
     </div>
-    <ul id="menu" class="hidden md:flex gap-8 text-sm font-medium">
-      <li><a href="#" class="hover:text-blue-400 transition duration-300">Features</a></li>
-      <li><a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a></li>
-      <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a></li>
-      <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a></li>
-      <li><a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a></li>
-    </ul>
     <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold transition duration-300">Invite</a>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#" class="hover:text-blue-400 transition duration-300">Features</a>
+      <a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a>
+      <a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a>
+      <a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a>
+      <a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a>
+    </div>
   </nav>
 
   <main class="flex flex-col items-center justify-center py-20 px-4 text-center">
@@ -79,12 +96,10 @@
   </footer>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('show');
+    }
   </script>
 </body>
 
