@@ -11,14 +11,9 @@
       theme: {
         extend: {
           animation: {
-            fadeIn: "fadeIn 0.8s ease-in-out forwards",
             fadeInUp: "fadeInUp 0.8s ease-in-out forwards",
           },
           keyframes: {
-            fadeIn: {
-              from: { opacity: 0 },
-              to: { opacity: 1 },
-            },
             fadeInUp: {
               from: { opacity: 0, transform: "translateY(20px)" },
               to: { opacity: 1, transform: "translateY(0)" },
@@ -30,8 +25,8 @@
   </script>
   <style>
     [data-animate] {
-      opacity: 0;
-      transform: translateY(20px);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     [data-animate].visible {
@@ -41,7 +36,7 @@
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
-  <nav class="flex items-center justify-between p-4 bg-gray-800 shadow-md sticky top-0 z-10 animate-fadeIn">
+  <nav class="flex items-center justify-between p-4 bg-gray-800 shadow-md sticky top-0 z-10">
     <div class="flex items-center gap-4">
       <img src="./logo.png" alt="Logo" class="h-12 w-12 rounded-lg">
       <ul class="hidden md:flex gap-8 text-sm font-medium">
@@ -72,7 +67,7 @@
     </div>
   </main>
 
-  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm" data-animate>
+  <footer class="mt-10 py-4 bg-gray-800 text-center text-gray-400 text-sm">
     &copy; 2024 Dynamo Bot. All rights reserved.
   </footer>
 
