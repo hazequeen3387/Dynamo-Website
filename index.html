@@ -34,15 +34,35 @@
     }
 
     .menu-toggle {
-      @apply md:hidden cursor-pointer text-white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .menu-toggle:hover {
+      background-color: #1f2937;
     }
 
     .mobile-menu {
-      @apply hidden flex flex-col gap-4 absolute top-16 left-4 bg-gray-800 shadow-lg rounded-md p-4;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px;
+      left: 16px;
+      background-color: #1f2937;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 100;
     }
 
     .mobile-menu.show {
-      @apply block;
+      display: flex;
     }
   </style>
 </head>
@@ -52,18 +72,18 @@
     <div class="flex items-center gap-4">
       <img src="./logo.png" alt="Logo" class="h-12 w-12 rounded-lg">
       <div class="menu-toggle md:hidden" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </div>
-      <ul class="hidden md:flex gap-8 text-sm font-medium">
-        <li><a href="#" class="hover:text-blue-400 transition duration-300">Features</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a></li>
-        <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a></li>
-        <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a></li>
-      </ul>
     </div>
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a href="#" class="hover:text-blue-400 transition duration-300">Features</a></li>
+      <li><a href="#" class="hover:text-blue-400 transition duration-300">Get Started</a></li>
+      <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400 transition duration-300">Vote</a></li>
+      <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400 transition duration-300">Discord</a></li>
+      <li><a href="#" class="hover:text-blue-400 transition duration-300">Dashboard</a></li>
+    </ul>
     <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold transition duration-300">Invite</a>
     <div class="mobile-menu" id="mobile-menu">
       <a href="#" class="hover:text-blue-400 transition duration-300">Features</a>
