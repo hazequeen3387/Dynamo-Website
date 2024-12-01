@@ -4,8 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> </title>
+  <title>Dynamo Bot - Überarbeitet</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    img {
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
@@ -16,14 +30,14 @@
         <img src="./logo.png" alt="Dynamo Bot Logo" class="h-10 w-10 rounded-lg">
         <span class="text-lg font-bold">Dynamo Bot</span>
       </a>
-      <ul class="flex items-center gap-6 text-sm font-medium">
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
         <li><a href="#features" class="hover:text-blue-400">Features</a></li>
         <li><a href="#get-started" class="hover:text-blue-400">Get Started</a></li>
         <li><a href="https://top.gg/bot/1183600303476572251/vote" class="hover:text-blue-400">Vote</a></li>
         <li><a href="https://discord.gg/dyjGaW6W66" class="hover:text-blue-400">Discord</a></li>
         <li><a href="#dashboard" class="hover:text-blue-400">Dashboard</a></li>
       </ul>
-      <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold">Invite</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-bold hidden md:inline-block">Invite</a>
     </nav>
   </header>
 
@@ -35,6 +49,17 @@
       <div class="flex justify-center gap-4">
         <a href="https://discord.com/oauth2/authorize?client_id=1183600303476572251&permissions=8&scope=bot+applications.commands" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-sm font-bold">Invite to Discord</a>
         <a href="https://top.gg/bot/1183600303476572251/vote" class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-md text-sm font-bold">Vote Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="bg-gray-800 py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Dynamo Bot in Action</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <img src="./images/dc1.png" alt="Screenshot 1" class="w-80 h-auto shadow-lg">
+        <img src="./images/dc2.png" alt="Screenshot 2" class="w-80 h-auto shadow-lg">
       </div>
     </div>
   </section>
